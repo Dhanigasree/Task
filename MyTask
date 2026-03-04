@@ -77,3 +77,86 @@ POPULATE_SAMPLE_DATA=false
 # =============================================================================
 BACKUP_DIR=./backups
 BACKUP_RETENTION_DAYS=30
+
+
+
+
+
+
+
+
+  1  apt update
+    2  apt install -y docker.io
+    3  git clone https://github.com/Dhanigasree/Retail-Inventory-CapsuleProject.git
+    4  docker pull ubuntu
+    5  docker images
+    6  docker create ubuntu1 /bin/bash
+    7  docker create ubuntu /bin/bash
+    8  docker ps -a
+    9  docker start 8bd74baafa8a
+   10  docker ps
+   11  docker ps -a
+   12  docker create -it --name capsule-cont ubuntu /bin/bash
+   13  docker ps -a
+   14  docker ps
+   15  docker attach capsule-cont
+   16  docker start 044f534e73bd
+   17  docker status 044f534e73bd
+   18  docker start 044f534e73bd
+   19  docker attach capsule-cont
+   20  docker ps
+ 21  docker ps -a
+   22  docker run -td --name capsule-app -p 82:3000 ubuntu
+   23  docker ps
+   24  docker exec -it capsule-app /bin/bash
+   25  nano Dockerfile
+   26  docker build -t capsule-app:v1.1.0
+   27  docker run -td --name dvvs
+   28  docker run -td --name capsule-app
+   29  docker image
+   30  docker build -t myimage .
+   31  docker build -t capsule .
+   32  docker build -t capsule-app:v1.1.0 .
+   33  ls
+   34  cd Retail-Inventory-CapsuleProject
+   35  ls
+   36  docker build -t capsule-app:v1.1.0 .
+   37  mv /home/ubuntu/Dockerfile /home/ubuntu/Retail-Inventory-CapsuleProject/
+   38  ls
+   39  docker build -t capsule-app:v1.1.0 .
+   40  docker run -d -p 82:3000 --name capsule-cont capsule-app:v1.1.0
+  41  docker run -d -p 82:3000 --name capsule-container capsule-app:v1.1.0
+   42  docker ps -a
+   43  docker stop capsule-app
+   44  docker rm capsule-app
+   45  docker rm capsule-container
+   46  docker run -d -p 82:3000 --name capsule-container capsule-app:v1.1.0
+   47  docker push dhaniga/capsule-app:v1.1.0
+   48  docker images
+   49  docker login
+   50  docker push dhaniga/capsule-app:v1.1.0
+   51  docker images
+   52  docker tag capsule-app:v1.1.0 dhaniga/capsule-app:v1.1.0
+   53  docker images
+   54  docker push dhaniga/capsule-app:v1.1.0
+   55  cat Dockerfile
+   56  nano .env
+   57  docker network create --subnet 11.0.0.0/16 --gateway 11.0.11.100 retail-net
+   58  docker run -d --name retail-mysql --network retail-net
+   59  docker run -d --name retail-mysql --network retail-net --ip 11.0.11.10 -e MYSQL_ROOTPASSWORD=root123 -e MYSQL_DATABASE=retaildb -p 3307:3306 mysql:8
+   60  ls
+ 61  cd sql
+   62  docker exec -i retail-mysql mysql -uroot -proot123 reatildb < database.sql
+   63  docker start retail-mysql
+   64  docker exec -i retail-mysql mysql -uroot -proot123 reatildb < database.sql
+   65  docker start retail-mysql
+   66  docker logs retail-mysql
+   67  docker rm retail-mysql
+   68  docker run -d   --name retail-mysql   -e MYSQL_ROOT_PASSWORD=root123   -e MYSQL_DATABASE=reatildb   -p 3306:3306   mysql:8
+   69  docker ps
+   70  docker exec -i retail-mysql mysql -uroot -proot123 reatildb < database.sql
+   71  docker exec -it retail-mysql mysql -uroot -proot123 -e "SHOW DATABASES;"
+   72  use capsule_db
+   73  docker exec -it retail-mysql mysql -uroot -proot123
+   74  history
+
